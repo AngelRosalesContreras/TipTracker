@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/fondo"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:elevation="4dp"
+            android:background="#080A0D"
+            app:itemTextColor="@color/textoFosfo"
+            android:fontFamily="casual">
+
+            <!-- Icono de hamburguesa -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/baseline_menu_24"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- Contenedor LinearLayout horizontal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:paddingEnd="16dp">
+
+                <!-- Texto -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/akronim"
+                    android:paddingStart="8dp"
+                    android:text="TipTracker"
+                    android:textColor="@color/textoFosfo"
+                    android:layout_marginRight="20dp"
+                    android:textSize="24sp"/>
+
+                <!-- Icono -->
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/kayli2"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <!-- Lista de publicaciones de otros usuarios>-->
+        <ListView
+            android:id="@+id/listViewOtherPosts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.56"
+            android:divider="@null"
+            android:dividerHeight="0dp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.44"
+            android:layout_gravity="center_horizontal">
+
+            <View
+                android:id="@+id/top_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_view"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnCount="2"
+                android:rowCount="8"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="-250dp"
+                android:layout_below="@+id/top_view"
+                >
+
+                <!-- Row 1 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_row="1"
+                    android:layout_rowWeight="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    android:background="@color/cintas"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/textViewNombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Monto de cuenta"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="1"
+                    android:layout_column="1"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="$"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewNombrePrecio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="0.0"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Row 2 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="2"
+                    android:layout_column="0"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:id="@+id/textViewPropina"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Porcentaje de propina"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="2"
+                    android:layout_column="1"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <EditText
+                            android:id="@+id/editTextPropina"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:gravity="center"
+                            android:hint="Introduce"
+                            android:layout_gravity="center_vertical"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Row 3 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="3"
+                    android:layout_column="0"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:id="@+id/textViewPersonas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Cantidad de personas"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="3"
+                    android:layout_column="1"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <EditText
+                            android:id="@+id/editTextPersonas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:gravity="center"
+                            android:hint="Introduce"
+                            android:layout_gravity="center_vertical"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Row 4 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="4"
+                    android:layout_column="0"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:orientation="vertical"
+                        >
+
+                        <Button
+                            android:id="@+id/botonCalcular"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="@color/textoPrinciapl"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Calcular"
+                            android:textColor="@color/cintas" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="4"
+                    android:layout_column="1"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:orientation="vertical"
+                        >
+
+                        <Button
+                            android:id="@+id/botonReset"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="@color/textoPrinciapl"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Reset"
+                            android:textColor="@color/cintas" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- Row 5 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="5"
+                    android:layout_column="0"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:id="@+id/textViewPropinaPagar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Monto de la propina"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="5"
+                    android:layout_column="1"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="$"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewPagarPropina"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="0.0"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- Row 6 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="6"
+                    android:layout_column="0"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:id="@+id/textViewTotalPagar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Total a pagar"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="6"
+                    android:layout_column="1"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="$"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewTotalPrecio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="0.0"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Row 7 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="7"
+                    android:layout_column="0"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:id="@+id/textViewTotalPagarPersona"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/black_ops_one"
+                            android:text="Pagar por persona"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="0"
+                    android:layout_row="7"
+                    android:layout_column="1"
+
+                    android:layout_margin="12dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cintas"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="$"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewTotalPrecioPersona"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/chewy"
+                            android:text="0.0"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textoFosfo"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

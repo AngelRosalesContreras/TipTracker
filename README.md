@@ -39,7 +39,7 @@ _Add your three screenshots in the `images` folder as shown below:_
 
 | Home Screen | Menu Selection | Tip Calculation |
 |-------------|---------------|-----------------|
-| ![Home](./images/home.jpg) | ![Menu](./images/menu.jpg) | ![Calculation](./images/calc.jpg) |
+| ![Home](./image/home.jpg) | ![Menu](./image/menu.jpg) | ![Calculation](./image/calc.jpg) |
 
 ---
 
